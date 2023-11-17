@@ -25,3 +25,9 @@
 #container a {
   text-decoration: none;
 }
+/* home.page.scss */
+.curso-imagen {
+  width: 50px;
+  height: 50px;
+  object-fit: cover; /* Esto asegura que la imagen cubra el área sin distorsionarse */
+}

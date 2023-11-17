@@ -1,6 +1,4 @@
-<!-- <ion-header>
-  <app-navbar></app-navbar>
-</ion-header> -->
+<!-- NAV-BAR -->
 <ion-header>
   <ion-toolbar>
     <ion-title>Academy Rise</ion-title>
@@ -10,22 +8,21 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content [fullscreen]="true">
+
+<ion-content [fullscreen]="true" >
   <ion-grid>
     <ion-row>
-      <!-- Iterar sobre tus cursos y crear una tarjeta para cada uno -->
       <ion-col size="12" size-md="6" size-lg="4" *ngFor="let curso of cursos">
         <ion-card>
-          <img src="{{ curso.imagen }}" alt="Imagen del curso"/>
+          <img src="{{ curso.imagen }}" alt="Imagen del curso" class="curso-imagen"/>
           <ion-card-header>
             <ion-card-title>{{ curso.titulo }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <p>{{ curso.descripcion }}</p>
-            <!-- Si tienes un video para mostrar -->
             <ion-item lines="none">
               <ion-label>
-                <ion-icon name="play-circle"></ion-icon>
+                <ion-icon name="play-circle-outline"></ion-icon>
                 Ver video
               </ion-label>
               <ion-button fill="clear" slot="end" (click)="verVideo(curso)">
@@ -37,5 +34,11 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <app-footer></app-footer>
 </ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
