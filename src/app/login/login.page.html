@@ -4,17 +4,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item>
-    <ion-label position="floating">Email</ion-label>
-    <ion-input type="email" [(ngModel)]="user.email"></ion-input>
-  </ion-item>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <ion-content>
 
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-  </ion-item>
+    <ion-item class="input-item">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email" class="custom-input"></ion-input>
+    </ion-item>
+  
+    <ion-item class="input-item">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="password" type="password" class="custom-input"></ion-input>
+    </ion-item>
 
-  <ion-button expand="full" (click)="login()">Login</ion-button>
-  <ion-button expand="full" fill="clear" routerLink="/register">Register</ion-button>
-</ion-content>
+    <ion-button expand="full" type="submit">Registrar</ion-button>
+  </ion-content>
+</form>
